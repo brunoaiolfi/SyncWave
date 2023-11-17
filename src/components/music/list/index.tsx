@@ -24,7 +24,7 @@ export function MusicList() {
             if (permissao !== RESULTS.GRANTED) return false;
 
             const res = await getAll({})
-            setMusics(res)
+            setMusics([...res, ...res, ...res, ...res, ...res, ...res])
         } catch (error) {
             Alert.alert('Não foi possível recuperar as músicas do seu dispositivo');
         }

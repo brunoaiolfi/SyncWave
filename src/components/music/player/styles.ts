@@ -7,18 +7,24 @@ interface containerProps {
 
 export const Container = styled.View<containerProps>`
     width: 100%;
-    height: 48px;
-    
-    padding: 10px;
-
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    height: 64px;
 
     margin: ${props => props.margin ? props.margin : '0px'};
 
     position: absolute;
     bottom: 10px;
+`;
+
+export const Wrapper = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.9);
+    padding: 8px 12px;
+    margin: 0 8px;
+
+    border-radius: 4px;
 `;
 
 export const Image = styled.Image`
@@ -50,13 +56,13 @@ export const FakeImage = styled.View`
 export const Info = styled.View`
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    width: 60%;
 `;
 
 export const ButtonsContainer = styled.View`
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 `;
 
 export const Button = styled.TouchableOpacity``;

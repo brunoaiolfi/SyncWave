@@ -20,24 +20,32 @@ export function MusicPlayer({ music, margin }: MusicListContainerProps) {
 
     return (
         <Styles.Container margin={margin}>
-            <Styles.Info>
-                <Styles.FakeImage />
-                <Text variation={enumTextVariation.MEDIUM} isBold={true} text={music.title} />
-            </Styles.Info>
-            <Styles.ButtonsContainer>
-                <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PREV)}>
-                    <Styles.ButtonIcon name="stepbackward" color="#ffffff" />
-                </Styles.Button>
-                <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PLAY)}>
-                    <Styles.ButtonIcon name="caretright" />
-                </Styles.Button>
-                <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PAUSE)}>
-                    <Styles.ButtonIcon name="pause" />
-                </Styles.Button>
-                <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.NEXT)}>
-                    <Styles.ButtonIcon name="stepforward" />
-                </Styles.Button>
-            </Styles.ButtonsContainer>
+            <Styles.Wrapper>
+                <Styles.Info>
+                    <Styles.FakeImage />
+                    <Text
+                        text={music.title}
+                        variation={enumTextVariation.MEDIUM}
+                        isBold={true}
+                        ellipsizeMode="tail"
+                        numberOfLines={1}
+                    />
+                </Styles.Info>
+                <Styles.ButtonsContainer>
+                    <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PREV)}>
+                        <Styles.ButtonIcon name="stepbackward" color="#ffffff" />
+                    </Styles.Button>
+                    <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PLAY)}>
+                        <Styles.ButtonIcon name="caretright" />
+                    </Styles.Button>
+                    <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.PAUSE)}>
+                        <Styles.ButtonIcon name="pause" />
+                    </Styles.Button>
+                    <Styles.Button onPress={() => handleOnPressAction(EnumPlayerAction.NEXT)}>
+                        <Styles.ButtonIcon name="stepforward" />
+                    </Styles.Button>
+                </Styles.ButtonsContainer>
+            </Styles.Wrapper>
         </Styles.Container>
     )
 }
