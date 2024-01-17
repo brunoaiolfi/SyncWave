@@ -4,7 +4,6 @@ import { useUser } from '../hooks/useUser';
 import { useEffect, useState } from 'react';
 import { SaveUserName } from '../views/saveUserName';
 import { Splash } from '../views/splash';
-import { Library } from '../views/library';
 import { Home } from './home';
 
 const Stack = createStackNavigator();

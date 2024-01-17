@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export function Container({ children }: ContainerProps) {
 
-    const { musicSelected } = usePlayer()
+    const { musicPlaing } = usePlayer()
 
     return (
         <>
@@ -17,9 +17,9 @@ export function Container({ children }: ContainerProps) {
             </Styled.Container>
 
             {
-                musicSelected &&
+                musicPlaing &&
                 <MusicPlayer
-                    music={musicSelected}
+                    music={musicPlaing}
                 />
             }
         </>

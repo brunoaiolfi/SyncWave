@@ -6,7 +6,7 @@ import { Song } from "react-native-get-music-files/lib/typescript/src/NativeTurb
 interface IPlayerProps {
     handleAction: (action: EnumPlayerAction) => Promise<void>;
     handleSelectMusicToPlay: (music: Song) => Promise<void>;
-    musicSelected: Song | null;
+    musicPlaing: Song | null;
 };
 
 interface IPlayerProvider {
@@ -17,7 +17,7 @@ export const PlayerContext = createContext({} as IPlayerProps);
 
 export function PlayerProvider({ children }: IPlayerProvider) {
 
-    const [musicSelected, setMusicSelected] = useState<Song | null>(null)
+    const [musicPlaing, setMusicPlaing] = useState<Song | null>(null)
 
     const dictPlayerAction = {
         [EnumPlayerAction.PLAY]: TrackPlayer.play,
@@ -37,16 +37,15 @@ export function PlayerProvider({ children }: IPlayerProvider) {
     
     async function handleSelectMusicToPlay(music: Song) {
       play(music)
-      setMusicSelected(music)
+      setMusicPlaing(music)
     }
-    
 
     return (
         <PlayerContext.Provider
             value={{
                 handleAction,
                 handleSelectMusicToPlay,
-                musicSelected
+                musicPlaing
             }}
         >
             {children}

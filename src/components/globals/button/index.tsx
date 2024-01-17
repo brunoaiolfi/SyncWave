@@ -6,20 +6,24 @@ import { TouchableOpacityProps } from 'react-native'
 
 interface ButtonProps extends TouchableOpacityProps {
     onPress: () => any;
-    text: string;
+    text?: string;
     textVariant?: enumTextVariation;
+    color?: string;
     variant?: enumButtonVariation;
     width?: string;
+    height?: string;
     Icon?: () => JSX.Element;
 }
 
-export function Button({ text, Icon, ...rest }: ButtonProps) {
+export function Button({ text = '', Icon, color, textVariant, ...rest }: ButtonProps) {
     return (
         <Styled.Button
             {...rest}
         >
             <Text
                 text={text}
+                variation={textVariant}
+                color={color}
             />
 
             {

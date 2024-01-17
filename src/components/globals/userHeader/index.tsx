@@ -11,7 +11,7 @@ export function UserHeader() {
             afternoon: '☀️',
             night: '🌙'
         },
-        time: keyof typeof dictGreetings = getTime();
+        time = getTime();
 
     function getTime(): keyof typeof dictGreetings {
         const horaAtual = new Date().getHours();

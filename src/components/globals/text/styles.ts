@@ -4,6 +4,7 @@ import { enumTextVariation } from "../../../models/enums/globals/TextVariation";
 interface textStyleInterface {
     variation: enumTextVariation
     isBold?: boolean
+    color?: string
 }
 
 const dictTextVariation = {
@@ -13,7 +14,7 @@ const dictTextVariation = {
 }
 
 export const Text = styled.Text<textStyleInterface>`
-    color: ${({ theme }) => theme.colors.white500};
+    color: ${({ color, theme }) => color ?? theme.colors.white500};
     font-size: ${({ variation }) => dictTextVariation[variation]};
     font-weight: ${({ isBold }) => isBold ? 'bold' : 'normal'};
 `;

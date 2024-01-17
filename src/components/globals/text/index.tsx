@@ -6,6 +6,7 @@ interface ContainerProps extends TextProps {
     text?: string,
     variation?: enumTextVariation
     isBold?: boolean
+    color?: string
 
 }
 

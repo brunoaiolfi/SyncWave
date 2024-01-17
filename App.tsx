@@ -6,6 +6,7 @@ import TrackPlayer from "react-native-track-player";
 import { useEffect } from "react";
 import { UserProvider } from "./src/context/userContext";
 import { IndexNavigator } from "./src/router";
+import { PlaylistProvider } from './src/context/playlistContext';
 
 export function App() {
 
@@ -20,11 +21,15 @@ export function App() {
   return (
     <>
       <ThemeProvider theme={themeDark}>
-        <UserProvider>
-          <PlayerProvider>
-            <IndexNavigator />
-          </PlayerProvider>
-        </UserProvider>
+
+        <PlaylistProvider>
+          <UserProvider>
+            <PlayerProvider>
+              <IndexNavigator />
+            </PlayerProvider>
+          </UserProvider>
+        </PlaylistProvider >
+
       </ThemeProvider>
     </>
   )

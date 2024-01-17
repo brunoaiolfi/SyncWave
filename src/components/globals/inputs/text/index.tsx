@@ -6,6 +6,7 @@ interface InputTextProps extends TextInputProps {
     value?: string;
     onChangeValue: (value: string) => void;
     width?: string;
+    height?: string;
 }
 
 export function InputText({ onChangeValue, placeholder, value, ...rest }: InputTextProps) {
@@ -15,6 +16,7 @@ export function InputText({ onChangeValue, placeholder, value, ...rest }: InputT
             value={value}
             onChangeText={onChangeValue}
             editable={true}
+            textAlignVertical='top'
             {...rest}
         />
     )

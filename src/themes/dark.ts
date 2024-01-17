@@ -8,6 +8,7 @@ export const themeDark = {
         warning: '#FFB039',
         success: '#30E885',
         
+        gray600: '#718096',
         gray800: '#1A202C',
         white500: '#ffffff',
         green500: '#30E885',
